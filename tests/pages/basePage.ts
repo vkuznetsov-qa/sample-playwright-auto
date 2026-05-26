@@ -89,4 +89,16 @@ export class BasePage {
     await this.click(locators.dialogConfirmBtn);
     await this.page.locator(locators.spinner).waitFor({ state: 'detached' });
   }
+
+  async deleteCollection(collectionName: string) {
+    const item = this.collectionItem(collectionName);
+    if (await item.count()) {
+      await item.hover();
+      await this.page.getByTestId(locators.collectionMenu).first().click();
+      await this.page.getByRole('menuitem', { name: 'Delete collection' }).click();
+      await this.click(locators.dialogDeleteBtn);
+      await this.page.locator(locators.spinner).waitFor({ state: 'attached' });
+      await this.page.locator(locators.spinner).waitFor({ state: 'detached' });
+    }
+  }
 }

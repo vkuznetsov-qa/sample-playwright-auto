@@ -33,15 +33,7 @@ test.afterAll(async ({ browser }) => {
   ];
 
   for (const name of collectionNames) {
-    const collection = tempBasePage.collectionItem(name);
-    if (await collection.count()) {
-      await collection.hover();
-      await tempBasePage.click(page.getByTestId(locators.collectionMenu).first());
-      await tempBasePage.click(page.getByRole('menuitem', { name: 'Delete collection' }));
-      await tempBasePage.click(locators.dialogDeleteBtn);
-      await page.waitForSelector(locators.spinner, { state: 'attached' });
-      await page.waitForSelector(locators.spinner, { state: 'detached' });
-    }
+    await tempBasePage.deleteCollection(name);
   }
 
   await page.close();
