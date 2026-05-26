@@ -1,0 +1,28 @@
+{
+  "name": "sample-playwright-auto",
+  "version": "0.0.1",
+  "description": "A Playwright automation sample for collection and asset workflows on pics.io.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkuznetsov-qa/sample-playwright-auto.git"
+  },
+  "keywords": [],
+  "author": "Valentyn Kuznetsov",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vkuznetsov-qa/sample-playwright-auto/issues"
+  },
+  "homepage": "https://github.com/vkuznetsov-qa/sample-playwright-auto#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.1",
+    "dotenv": "^17.4.2"
+  }
+}
